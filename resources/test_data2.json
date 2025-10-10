@@ -1,0 +1,16 @@
+{
+  "name": "Test User 2",
+  "email": "test2@example.com",
+  "message": "Another test JSON file for POST testing",
+  "timestamp": "2024-03-15T10:35:00Z",
+  "data": {
+    "id": 2,
+    "active": false,
+    "preferences": ["option2", "option4"],
+    "metadata": {
+      "created_by": "admin",
+      "version": "1.0",
+      "tags": ["test", "json", "post"]
+    }
+  }
+}

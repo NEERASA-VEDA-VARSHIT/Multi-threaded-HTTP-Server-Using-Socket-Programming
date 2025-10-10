@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Multi-threaded HTTP Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover { background: #0056b3; }
+        .contact-info {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>Contact Information</h1>
+        
+        <div class="contact-info">
+            <h2>📧 Get in Touch</h2>
+            <p>This is a demonstration of a multi-threaded HTTP server built for educational purposes.</p>
+            
+            <h3>Server Details</h3>
+            <ul>
+                <li><strong>Host:</strong> localhost (127.0.0.1)</li>
+                <li><strong>Port:</strong> 8080 (configurable)</li>
+                <li><strong>Protocol:</strong> HTTP/1.1</li>
+                <li><strong>Thread Pool:</strong> 10 threads (configurable)</li>
+            </ul>
+            
+            <h3>API Endpoints</h3>
+            <ul>
+                <li><strong>GET /</strong> - Home page</li>
+                <li><strong>GET /about.html</strong> - About page</li>
+                <li><strong>GET /contact.html</strong> - This page</li>
+                <li><strong>GET /[filename]</strong> - Download files</li>
+                <li><strong>POST /upload</strong> - Upload JSON data</li>
+            </ul>
+        </div>
+        
+        <h2>🧪 Testing the Server</h2>
+        <p>Try these test scenarios:</p>
+        <ul>
+            <li>Download text files: <code>GET /sample.txt</code></li>
+            <li>Download images: <code>GET /logo.png</code></li>
+            <li>Upload JSON: <code>POST /upload</code> with JSON body</li>
+            <li>Test security: <code>GET /../etc/passwd</code> (should return 403)</li>
+        </ul>
+    </div>
+</body>
+</html>

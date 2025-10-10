@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Multi-threaded HTTP Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>About This Server</h1>
+        
+        <h2>🏗️ Architecture</h2>
+        <p>This multi-threaded HTTP server is built from scratch using Python's socket programming capabilities. It demonstrates advanced networking concepts and concurrent programming techniques.</p>
+        
+        <h2>🔧 Technical Features</h2>
+        <ul>
+            <li><strong>Thread Pool:</strong> Configurable thread pool for handling concurrent requests</li>
+            <li><strong>Socket Programming:</strong> Low-level TCP socket implementation</li>
+            <li><strong>HTTP Protocol:</strong> Full HTTP/1.1 request/response handling</li>
+            <li><strong>Binary Transfer:</strong> Efficient binary file downloads</li>
+            <li><strong>Security:</strong> Path traversal protection and host validation</li>
+            <li><strong>Connection Management:</strong> Keep-alive support with timeouts</li>
+        </ul>
+        
+        <h2>📊 Performance</h2>
+        <p>The server can handle multiple concurrent connections efficiently using a thread pool architecture. Each request is processed in its own thread, allowing for true parallelism.</p>
+        
+        <h2>🔒 Security</h2>
+        <p>Built-in security features include path traversal protection, host header validation, and request size limits to prevent common web vulnerabilities.</p>
+    </div>
+</body>
+</html>

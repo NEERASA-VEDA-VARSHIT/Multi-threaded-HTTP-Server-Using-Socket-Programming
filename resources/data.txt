@@ -1,0 +1,13 @@
+This is another sample text file for testing purposes.
+
+It contains different content to demonstrate the server's ability to serve multiple text files.
+
+The server should handle this file the same way as sample.txt - as a binary download with the appropriate headers.
+
+Test data:
+- Line 1: Basic text content
+- Line 2: Numbers and symbols: 1234567890 !@#$%^&*()
+- Line 3: Unicode characters: αβγδε 中文 العربية
+- Line 4: Special characters: \n\t\r\"'`~
+
+This file is used to test the server's text file serving capabilities.

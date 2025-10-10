@@ -1,0 +1,11 @@
+{
+  "name": "Test User 1",
+  "email": "test1@example.com",
+  "message": "This is a test JSON file for POST testing",
+  "timestamp": "2024-03-15T10:30:00Z",
+  "data": {
+    "id": 1,
+    "active": true,
+    "preferences": ["option1", "option2", "option3"]
+  }
+}
