@@ -1,6 +1,11 @@
 # Multi-threaded HTTP Server
 
-A comprehensive HTTP server implementation built from scratch using Python socket programming. This server demonstrates advanced networking concepts, concurrent programming, and HTTP protocol implementation.
+[![CI](https://github.com/NEERASA-VEDA-VARSHIT/Multi-threaded-HTTP-Server-Using-Socket-Programming/actions/workflows/ci.yml/badge.svg)](https://github.com/NEERASA-VEDA-VARSHIT/Multi-threaded-HTTP-Server-Using-Socket-Programming/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
+[![Code Style: Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
+[![Tests: 14/14 Passed](https://img.shields.io/badge/tests-14%20passed-brightgreen.svg)](tests/)
+
+A lightweight, concurrent HTTP/1.1 web server implemented from scratch using raw Python TCP socket programming, queue-based thread pool concurrency, path containment security, and automated integration tests.
 
 ## ⚡ Quick Start
 
@@ -217,6 +222,30 @@ The server uses a thread pool pattern for efficient concurrent request handling:
 - Limits request size to 8192 bytes
 - Proper error handling for malformed requests
 
+
+
+## 🧪 Automated Testing & Verification
+
+The server features a comprehensive automated pytest test suite (	ests/test_server.py) with 14 unit and live socket integration tests:
+
+`ash
+# Run all tests
+pytest -v
+
+# Run with coverage report
+pytest --cov=server --cov-report=term-missing
+
+# Run lint and format check with Ruff
+ruff check server.py tests/
+ruff format --check server.py tests/
+`
+
+### Verified Test Contracts (14/14 Passing)
+1. **Path Traversal Containment**: Enforces that ../, ../../etc/passwd, and Windows-style paths are blocked.
+2. **HTTP/1.1 Request Parsing**: Validates request-line components, case-insensitive headers, and JSON bodies.
+3. **RFC 7231 Response Formatting**: Verifies date headers, server tokens, status codes, and content lengths.
+4. **Live Socket Verification**: Binds ephemeral socket listeners to test concurrent GET, 404, 403, 405, and 201 JSON uploads.
+
 ## 📊 Performance Metrics
 
 The server has been tested with:
@@ -235,7 +264,7 @@ The server has been tested with:
 5. **No Caching**: No response caching implemented
 6. **No Compression**: No gzip compression for responses
 
-## 🎯 Assignment Requirements Met
+## 🎯 Protocol Compliance & Architecture
 
 ### ✅ Server Configuration
 - Runs on localhost (127.0.0.1) by default
