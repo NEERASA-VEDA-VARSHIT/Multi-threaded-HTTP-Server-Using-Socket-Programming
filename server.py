@@ -62,8 +62,10 @@ def secure_path_join(base, *paths):
     normalize paths and verify they stay within base directory
     Returns absolute path if safe, None if potential attack detected
     """
+    # Normalize cross-platform path separators (convert backslashes to system separator)
+    clean_paths = [p.replace("\\", os.sep) if isinstance(p, str) else p for p in paths]
     # Normalize the path to remove any .. or . components
-    joined = os.path.normpath(os.path.join(base, *paths))
+    joined = os.path.normpath(os.path.join(base, *clean_paths))
     base_abs = os.path.abspath(base)
     joined_abs = os.path.abspath(joined)
 
@@ -538,7 +540,7 @@ class ClientConnectionHandler:
         os.makedirs(UPLOADS_DIR, exist_ok=True)
 
         # Generate unique filename as required by assignment
-        ts = datetime.datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+        ts = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d_%H%M%S")
         fname = f"upload_{ts}_{generate_upload_id(6)}.json"
         fpath = os.path.join(UPLOADS_DIR, fname)
 
